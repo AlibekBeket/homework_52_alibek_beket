@@ -11,4 +11,5 @@ class ToDoAdmin(admin.ModelAdmin):
     fields = ("description", "status", "created_at")
     readonly_fields = ("id", "created_at")
 
+
 admin.site.register(ToDo, ToDoAdmin)

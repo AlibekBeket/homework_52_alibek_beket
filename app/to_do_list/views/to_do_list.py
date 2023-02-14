@@ -18,5 +18,6 @@ def home_view(request: WSGIRequest):
     }
     return render(request, 'home_page.html', context=context)
 
+
 def add_view(request: WSGIRequest):
     return render(request, 'add_page.html')
