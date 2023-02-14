@@ -1,3 +1,4 @@
+
 from django.db import models
 
 
@@ -9,8 +10,8 @@ class ToDo(models.Model):
         ('made', 'Сделано')
     ]
     description = models.TextField(max_length=1000, null=False, blank=False, verbose_name="Описание")
-    status = models.CharField(max_length=40, null=False, blank=False, verbose_name='Статус', choices=choices)
-    created_at = models.DateField(verbose_name="Дата выполнения")
+    status = models.CharField(max_length=40, null=False, blank=False, verbose_name='Статус', choices=choices, default='new')
+    created_at = models.DateField(verbose_name='Дата выполнения', blank=True, null=True)
 
     def __str__(self):
-        return f"{self.author} - {self.title}"
+        return f"{self.description} - {self.status}"
